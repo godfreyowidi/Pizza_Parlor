@@ -6,17 +6,17 @@ function Pizza(toppings, size) {
 
 Pizza.prototype.costBasedOnSize = function() {
   if (this.size === "small") {
-    return 4;
+    return 7;
   } else if (this.size === "medium") {
-    return 5;
+    return 10;
   } else if (this.size === "large") {
-    return 6;
+    return 15;
   } else {
     
   }
 }
 
-Pizza.prototype.costbasedOnTopping = function() {
+Pizza.prototype.costBasedOnTopping = function() {
   if (this.toppings.length != 0) {
     let toppingCost = this.toppings.length * 4;
     return toppingCost;
@@ -37,7 +37,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("#invoice").show();
     let inputtedName = $("#name").val();
-    let inputtedToppings = parseInt($("toppings").val());
+    let inputtednumToppings = parseInt($("#numToppings").val());
     let toppingTray = [];
     $("input:checkbox[name=toppingCheck]:checked").each(function() {
       let inputtedToppings = $(this).val();
@@ -48,10 +48,10 @@ $(document).ready(function() {
     $("#displayName").text(inputtedName);
     $("#displaySize").text(inputtedCheckedSize);
 
-    pizza = new Pizza(toppingTray, inputtedSize);
-    let costbasedOnToppings = pizza.costbasedOnTopping();
+    pizza = new Pizza(toppingTray, inputtedCheckedSize);
+    let costBasedOnToppings = pizza.costBasedOnTopping();
     let costBasedOnSizes = pizza.costBasedOnSize();
-    pizza.tabulate(costbasedOnToppings, costBasedOnSizes);
+    pizza.tabulate(costBasedOnToppings, costBasedOnSizes);
   });
 });
 
