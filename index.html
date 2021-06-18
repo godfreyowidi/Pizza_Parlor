@@ -32,56 +32,58 @@
 
     <div class="form-check">
       <label for="chooseToppings"><strong><em>Which Pizza Toppings would you like today:</em></strong></label><br>
-      <input class="form-check-input" type="checkbox" value="Cheese" name="toppingCheck">
+      <input type="checkbox" value="Cheese" name="checkTopping">
         Cheese
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Pepperoni" name="toppingCheck" >
+      <input type="checkbox" value="Pepperoni" name="checkTopping" >
         Pepperoni
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Artichoke" name="toppingCheck" >
-      <label class="form-check-label" for="Artichoke">
+      <input type="checkbox" value="Artichoke" name="checkTopping" >
+      <label for="Artichoke">
         Artichoke
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="Anchovy," name="toppingCheck" >
-      <label class="form-check-label" for="Anchovy,">
+      <input type="checkbox" value="Anchovy," name="checkTopping" >
+      <label for="Anchovy,">
         Anchovy,
       </label>
     </div><br>
     <div class="form-check">
       <label for="chooseToppings"><strong><em>Which Pizza size would you like today:</em></strong></label><br>
-      <input class="form-check-input" type="radio" name="sizePizza" id="option1" value="Small">
-      <label class="form-check-label" for="sizeSmall">
+      <input type="radio" name="sizePizza" id="option1" value="Small">
+      <label for="sizeSmall">
         Small (£7)
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="sizePizza" id="option2" value="Medium">
-      <label class="form-check-label" for="sizeMedium">
+      <input type="radio" name="sizePizza" id="option2" value="Medium">
+      <label for="sizeMedium">
         Medium (£10)
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="sizePizza" id="option3" value="Large">
-      <label class="form-check-label" for="sizeLarge">
+      <input type="radio" name="sizePizza" id="option3" value="Large">
+      <label for="sizeLarge">
         Large (£15)
       </label>
     </div><br><button type="submit" class="btn-primary" id="btn-submit">Checkout</button>
   </form><br>
+    <div>
+      <p id="alert-size">Please check a size you want!</p>
+      <p id="alert-topping">Please check a topping you want!</p>
+    </div>
   <div id="invoice">
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p><strong>Your Invoice:</strong></p>
-        <p>Customer: <span id="displayName"></span></p>
-        <p>Toppings: <span id="displayToppings"></span></p>
-        <p>Size: <span id="displaySize"></span></p>
-        <p>Total Amount Due: <span id="showTotalCost"></span></p>
-      </div>
+    <div class="panel-body">
+      <p><strong>Your Invoice:</strong></p>
+      <p>Customer: <span id="displayName"></span></p>
+      <p>Toppings: <span id="displayToppings"></span></p>
+      <p>Size: <span id="displaySize"></span></p>
+      <p>Total Amount Due: <span id="showTotalCost"></span></p>
     </div>
   </div>
 </body>

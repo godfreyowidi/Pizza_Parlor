@@ -12,7 +12,7 @@ Pizza.prototype.costBasedOnSize = function() {
   } else if (this.size === "large") {
     return 15;
   } else {
-    
+    $("#alert-size").show();    
   }
 }
 
@@ -21,7 +21,7 @@ Pizza.prototype.costBasedOnTopping = function() {
     let toppingCost = this.toppings.length * 4;
     return toppingCost;
   } else {
-
+    $("#alert-topping").show();
   }
 }
 
@@ -39,7 +39,7 @@ $(document).ready(function() {
     let inputtedName = $("#name").val();
     let inputtednumToppings = parseInt($("#numToppings").val());
     let toppingTray = [];
-    $("input:checkbox[name=toppingCheck]:checked").each(function() {
+    $("input:checkbox[name=checkTopping]:checked").each(function() {
       let inputtedToppings = $(this).val();
       toppingTray.push(inputtedToppings);
       $("#displayToppings").text(inputtedToppings + ",");

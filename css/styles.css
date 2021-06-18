@@ -1,5 +1,9 @@
-#invoice {
+#invoice, #alert-size, #alert-topping {
   display: none;
+}
+
+#alert-size, #alert-topping {
+  color: red;
 }
 
 body {
