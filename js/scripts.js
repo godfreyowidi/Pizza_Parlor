@@ -37,7 +37,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("invoice").show();
     let inputtedName = $("#name").val();
-    let inputtedToppingsQuantity = parseInt($("toppings").val());
+    let inputtedToppings = parseInt($("toppings").val());
     let toppingTray = [];
     $("input:checkbox[name=toppingCheck]:checked").each(function() {
       let inputtedToppings = $(this).val();
