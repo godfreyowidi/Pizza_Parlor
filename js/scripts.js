@@ -24,9 +24,6 @@ Pizza.prototype.costbasedOnTopping = function() {
   }
 }
 
-Pizza.prototype.tabulate = function(tCost, sCost) {
-  let totalCost = tCost + sCost;
-  $("displayTotalCost").html(totalCost)
-}
+
 
 
