@@ -18,7 +18,7 @@ Pizza.prototype.costBasedOnSize = function() {
 
 Pizza.prototype.costBasedOnTopping = function() {
   if (this.toppings.length != 0) {
-    let toppingCost = this.toppings.length * 4;
+    let toppingCost = this.toppings.length * 4; //meaning pepperoni will be more expensive than cheese
     return toppingCost;
   } else {
     $("#alert-topping").show();
@@ -37,8 +37,9 @@ $(document).ready(function() {
     event.preventDefault();
     $("#invoice").show();
     let inputtedName = $("#name").val();
-    let inputtednumToppings = parseInt($("#numToppings").val());
-    let toppingTray = [];
+    let inputtednumToppings = parseInt($("#numToppings :selected").val());
+
+    let toppingTray = []; //gets the value of checked toppings
     $("input:checkbox[name=checkTopping]:checked").each(function() {
       let inputtedToppings = $(this).val();
       toppingTray.push(inputtedToppings);
