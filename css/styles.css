@@ -1,0 +1,20 @@
+#invoice {
+  display: none;
+}
+
+body {
+  font-family: "Amatic SC", sans-serif;
+  font-weight: bolder;
+  color: white;
+  background-image: url(/images/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+h1 {
+  font-size: 900%;
+}
+
+.form-group {
+  font-size: 200%;
+}
