@@ -1,3 +1,4 @@
+![alt image](/images/README.jpg)
 # _Pizza Parlor_
 
 #### _An e-commerce website to order pizza based on size and topping type_
