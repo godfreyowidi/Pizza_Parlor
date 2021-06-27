@@ -5,29 +5,30 @@ function Pizza(toppings, size) {
 }
 
 Pizza.prototype.costBasedOnSize = function() {
-  if (this.size === "small") {
+  if (this.size === "Small") {
     return 7;
-  } else if (this.size === "medium") {
+  } else if (this.size === "Medium") {
     return 10;
-  } else if (this.size === "large") {
+  } else if (this.size === "Large") {
     return 15;
   } else {
-    $("#alert-size").show();    
+    return ("Did you choose the size of your pizza?")    
   }
 }
 
 Pizza.prototype.costBasedOnTopping = function() {
   if (this.toppings.length != 0) {
-    let toppingCost = this.toppings.length * 4; //meaning pepperoni will be more expensive than cheese
+    let toppingCost = this.toppings.length * 4;
     return toppingCost;
   } else {
-    $("#alert-topping").show();
+    return ("Did you choose a topping for your pizza?")
   }
 }
 
 Pizza.prototype.tabulate = function(tCost, sCost) {
   let totalCost = tCost + sCost;
-  $("#showTotalCost").html(totalCost)
+  return totalCost;
+  //$("#showTotalCost").html(totalCost)
 }
 
 //UI
@@ -35,24 +36,29 @@ let pizza;
 $(document).ready(function() {
   $("#formField").submit(function(event) {
     event.preventDefault();
+    
     $("#invoice").show();
     let inputtedName = $("#name").val();
     let inputtednumToppings = parseInt($("#numToppings :selected").val());
 
     let toppingTray = []; //gets the value of checked toppings
     $("input:checkbox[name=checkTopping]:checked").each(function() {
-      let inputtedToppings = $(this).val();
-      toppingTray.push(inputtedToppings);
-      $("#displayToppings").text(inputtedToppings + ",");
+      let inputtedTopping = ($(this).val());
+      toppingTray.push(inputtedTopping);
+      //toppingTray[i] *= inputtednumToppings;
     });
+    $("#displayToppings").text(toppingTray + ",");
+    
     let inputtedCheckedSize =$("input:radio[name=sizePizza]:checked").val();
     $("#displayName").text(inputtedName);
     $("#displaySize").text(inputtedCheckedSize);
 
     pizza = new Pizza(toppingTray, inputtedCheckedSize);
     let costBasedOnToppings = pizza.costBasedOnTopping();
-    let costBasedOnSizes = pizza.costBasedOnSize();
-    pizza.tabulate(costBasedOnToppings, costBasedOnSizes);
+    let costBasedOnSizes = pizza.costBasedOnSize(inputtedCheckedSize);
+    let tabulateTotalCost = pizza.tabulate(costBasedOnToppings, costBasedOnSizes);
+    //let tabulate = (costBasedOnToppings, costBasedOnSizes);
+    $("#showTotalCost").html(tabulateTotalCost)
   });
 });
 

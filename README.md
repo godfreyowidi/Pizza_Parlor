@@ -30,20 +30,20 @@ Expected output: return "4"
 
 ```
 Test: "Alert the customer to check a size if no radio is checked"
-Code: else {alert: ("Please check a size you want!")}
-Expected output: "Please check a size you want!"
+Code: else {alert: ("Did you choose the size of your pizza?")}
+Expected output: "Did you choose the size of your pizza?"
 ```
 ### Describe costBasedOnTopping()
 
 ```
 Test: "Return a value based on the customer selection of pizza topping type"
 Code: if (this.toppings === "Cheese")
-Expected output: return this.pizzaPrice
+Expected output: return "this.topping.length * 4"
 ```
 ```
 Test: "Alert the customer to check a topping type if no radio is checked"
-Code: else {alert: ("Please check a topping you want!")}
-Expected output: "Please check a topping you want!"
+Code: else {alert: ("Did you choose a topping for your pizza?")}
+Expected output: "Did you choose a topping for your pizza?"
 ```
 
 ### Describe tabulate()
